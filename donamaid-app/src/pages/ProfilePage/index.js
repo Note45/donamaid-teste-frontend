@@ -1,13 +1,19 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
+import './styles.css';
+import logo from '../../assets/donamaid-branco-logo.png';
+
 const ProfilePage = () => {
   const professionalData = useLocation().state;
 
-  console.log(professionalData);
-
   return(
-    <h1>Profile Data Page</h1>
+    <div id='profileContainer'>
+      <header>
+        <img id='logo' src={logo} alt='Logo Donamaid'/>
+      </header>
+
+    </div>
   );
 }
 

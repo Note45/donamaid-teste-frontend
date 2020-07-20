@@ -1,0 +1,17 @@
+#profileContainer {
+  width: 100vw;
+  height: 100vh;
+  background:  linear-gradient( 190grad, var(--primary-pink-color) 50%, var(--primary-white-color) 50%);
+}
+
+#profileContainer header {
+  width: 100vw;
+  background-color: var(--primary-pink-color);
+}
+
+#profileContainer header #logo {
+  max-width: 400px;
+  max-height: 50px;
+  margin: 10px;
+  margin-left: 50px;
+}
