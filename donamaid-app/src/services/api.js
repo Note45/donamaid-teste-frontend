@@ -1,7 +1,24 @@
 import axios from 'axios';
 
-const api = axios.create({ 
-  baseURL: 'https://swapi.dev/api/' 
-});
+function getDetail(apiURL) {
+  axios.get(apiURL).then(function(response) {
+    showDetail(response.data);
+  });
+}
 
-export default api;
+function showDetail(data) {
+  for (let i = 0; i < data.results.length; i++) {
+    peopleNames.push(data.results[i]);
+  }
+  
+  if (data.next) {
+    getDetail(data.next);
+  }else {
+    return peopleNames;
+  }
+}
+
+var peopleNames = [];
+getDetail("https://swapi.dev/api/people/");
+
+export default peopleNames;
