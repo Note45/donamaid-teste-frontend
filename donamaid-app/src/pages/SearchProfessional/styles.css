@@ -40,6 +40,7 @@
   border-radius: 15px;
   font-size: x-large;
   color: var( --primary-white-color);
+  padding: 8px;
 }
 
 #searchContainer button:hover {
