@@ -1,0 +1,16 @@
+#containerSearchProfessional {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#containerSearchProfessional header {
+  background-color: var(--primary-pink-color);
+}
+
+#containerSearchProfessional header #logo {
+  max-width: 400px;
+  max-height: 50px;
+  margin: 10px;
+  margin-left: 50px;
+}
