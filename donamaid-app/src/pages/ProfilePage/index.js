@@ -6,7 +6,7 @@ import logo from '../../assets/donamaid-branco-logo.png';
 import profileAvatar from '../../assets/profile-avatar.png';
 
 const ProfilePage = () => {
-  const professionalData = useLocation().state;
+  const data = useLocation().state;
 
   return(
     <div id='profilePageContainer'>
@@ -19,10 +19,9 @@ const ProfilePage = () => {
 
         <div id='professionalInformation'>
           <div id='professionalName'>
-            <h1>Nome do Prosissional</h1>
-            <legend>Com a Donamaid desde 2018</legend>
+            <h1>{data.professionalData.name.toUpperCase()}</h1>
+            <legend>{`Com a Donamaid desde ${data.professionalData.created.split('-')[0]}`}</legend>
           </div>
-
 
           <p>Description Description Description Description Description
           Description Description Description Description Description
@@ -33,7 +32,7 @@ const ProfilePage = () => {
       </div>
       
       <div id='containerButtonHire'>
-        <button id='hireProfessional'>QUERO CONTRATAR NAME</button>
+        <button id='hireProfessional'>{`QUERO CONTRATAR ${data.professionalData.name.toUpperCase()}`}</button>
       </div>
     </div>
   );
