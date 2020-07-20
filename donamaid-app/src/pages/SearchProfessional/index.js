@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import './styles.css';
 import logo from '../../assets/donamaid-branco-logo.png';
@@ -7,6 +8,8 @@ import peopleNames from '../../services/api';
 const SearchProfessional = () => {
   const [ professionals, setProfessionals ] = useState([]);
 
+  const history = useHistory();
+
   useEffect(() => {
     setProfessionals(peopleNames);
   }, []);
@@ -14,12 +17,21 @@ const SearchProfessional = () => {
   async function handleClick() {
     let inputName = document.getElementById('inputName').value;
 
-    if(inputName !== '') {
-      console.log('Clicou');
+    if(inputName !== '' && professionals !== []) {
+      for(const professionalData of professionals) {
+        if(inputName === professionalData.name) {
+          history.push({
+            pathname: '/profile-page',
+            state: {professionalData}
+          });
+
+          break;
+        }
+      }
+    }else {
+      alert('Verifique o nome do profissional digitado!')
     }
   }
-
-  console.log(professionals);
 
   return (
     <div id='containerSearchProfessional'>
