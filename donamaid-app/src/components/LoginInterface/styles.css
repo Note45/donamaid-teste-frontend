@@ -1,0 +1,21 @@
+#loginInterfaceContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary-black-color);
+}
+
+#loginInterfaceContainer #LoginInterface {
+  max-width: 400px;
+  max-height: 500px;
+  background-color: var(--secondary-white-color);
+  border: 2px solid var(--secondary-white-color);
+  border-radius: 10px;
+}

@@ -6,12 +6,14 @@ import { FaSearch } from 'react-icons/fa';
 import './styles.css';
 import logo from '../../assets/donamaid-branco-logo.png';
 import profileAvatar from '../../assets/profile-avatar.png';
+import LoginInterface from '../../components/LoginInterface';
 
 const ProfilePage = () => {
   const [ data, setData ] = useState({
     ...useLocation().state,
     homeworldDetails: {}
   });
+  const [ showLoginInterface, setShowLoginInterface ] = useState(false); 
 
   const history = useHistory();
 
@@ -59,8 +61,17 @@ const ProfilePage = () => {
       </div>
       
       <div id='containerButtonHire'>
-        <button id='hireProfessional'>{`QUERO CONTRATAR ${data.professionalData.name.toUpperCase()}`}</button>
+        <button 
+          id='hireProfessional'
+          onClick={() => setShowLoginInterface(true)}
+        >
+          {`QUERO CONTRATAR ${data.professionalData.name.toUpperCase()}`}
+        </button>
       </div>
+
+      {showLoginInterface &&
+        <LoginInterface />
+      }
     </div>
   );
 }
