@@ -33,7 +33,7 @@
 
 #professionalProfile #professionalName{
   color: var(--primary-white-color);
-  margin-bottom: 100px;
+  margin-bottom: 50%;
 }
 
 #professionalProfile h1 {
@@ -55,4 +55,9 @@
   border: 2px solid var(--secondary-pink-color);
   border-radius: 15px;
   padding: 5px;
+}
+
+#descriptionContainer h2 {
+  margin: 5px;
+  font-weight: 300;
 }

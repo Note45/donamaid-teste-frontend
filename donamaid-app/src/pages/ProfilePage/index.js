@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import axios from 'axios'
 
 import './styles.css';
 import logo from '../../assets/donamaid-branco-logo.png';
 import profileAvatar from '../../assets/profile-avatar.png';
 
 const ProfilePage = () => {
-  const data = useLocation().state;
+  const [ data, setData ] = useState({
+    ...useLocation().state,
+    homeworldDetails: {}
+  });
 
+  useEffect(() => {
+    async function getHomeWorldName() {
+      const nameLocation = await axios.get(data.professionalData.homeworld).then(function(response) {
+        return response.data;
+      });
+
+      setData({
+        ...data, 
+        homeworldDetails: nameLocation
+      });
+    }
+
+    getHomeWorldName();
+  }, []); 
+   
   return(
     <div id='profilePageContainer'>
       <header>
@@ -23,11 +42,11 @@ const ProfilePage = () => {
             <legend>{`Com a Donamaid desde ${data.professionalData.created.split('-')[0]}`}</legend>
           </div>
 
-          <p>Description Description Description Description Description
-          Description Description Description Description Description
-          Description Description Description Description Description
-          Description Description Description Description Description
-          </p>
+          <div id='descriptionContainer'>
+            <h2>{`Região de Atuação: ${data.homeworldDetails.name}`}</h2>
+            <h2>{`Serviços realizados: ${data.professionalData.mass}`}</h2>
+            <h2>{`Ultimo Serviço: ${data.professionalData.edited.split('-')[1]}/${data.professionalData.edited.split('-')[0]}`}</h2>
+          </div>
         </div>
       </div>
       

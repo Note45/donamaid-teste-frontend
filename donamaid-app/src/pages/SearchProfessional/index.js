@@ -41,7 +41,7 @@ const SearchProfessional = () => {
 
       <div id='searchContainer'>
         <input id='inputName' type='text' placeholder='Digite o nome do profissional...'/>
-        <button onClick={handleClick}>Pesquisar Profissional</button>
+        <button onClick={handleClick}>PESQUISAR PROFISSIONAL</button>
       </div>
     </div>
   );
