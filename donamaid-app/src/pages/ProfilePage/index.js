@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import axios from 'axios'
+import { useHistory, useLocation } from 'react-router-dom';
+import axios from 'axios';
+import { FaSearch } from 'react-icons/fa';
 
 import './styles.css';
 import logo from '../../assets/donamaid-branco-logo.png';
@@ -11,6 +12,8 @@ const ProfilePage = () => {
     ...useLocation().state,
     homeworldDetails: {}
   });
+
+  const history = useHistory();
 
   useEffect(() => {
     async function getHomeWorldName() {
@@ -31,6 +34,11 @@ const ProfilePage = () => {
     <div id='profilePageContainer'>
       <header>
         <img id='logo' src={logo} alt='Logo Donamaid'/>
+        
+        <button id='searchProfessioanlButton' onClick={() => history.push('/')}>
+          <p>PESQUISAR OUTRO PROFISSIONAL</p>
+          <FaSearch id='icon' />    
+        </button>
       </header>
 
       <div id='professionalProfile'>

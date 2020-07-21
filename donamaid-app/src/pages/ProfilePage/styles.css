@@ -5,6 +5,8 @@
 }
 
 #profilePageContainer header {
+  display: flex;
+  align-self: center;
   width: 100vw;
   background-color: var(--primary-pink-color);
 }
@@ -14,6 +16,33 @@
   max-height: 50px;
   margin: 10px;
   margin-left: 50px;
+}
+
+#searchProfessioanlButton {
+  color: var(--primary-white-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: medium;
+  margin: auto;
+  margin-right: 40px;
+  border: 2px solid var(--secondary-pink-color);
+  background-color: var(--secondary-pink-color);
+  border-radius: 15px;
+  transition: opacity 0.8s;
+}
+
+#searchProfessioanlButton #icon {
+  margin-left: 5px;
+}
+
+#searchProfessioanlButton p {
+  margin: 5px;
+}
+
+#searchProfessioanlButton:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 #professionalProfile {
@@ -55,6 +84,12 @@
   border: 2px solid var(--secondary-pink-color);
   border-radius: 15px;
   padding: 5px;
+  transition: opacity 0.8s;
+}
+
+#containerButtonHire button:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 #descriptionContainer h2 {
