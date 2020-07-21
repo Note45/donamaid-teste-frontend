@@ -14,8 +14,80 @@
 
 #loginInterfaceContainer #LoginInterface {
   max-width: 400px;
-  max-height: 500px;
+  max-height: 80%;
+  padding: 40px;
   background-color: var(--secondary-white-color);
   border: 2px solid var(--secondary-white-color);
   border-radius: 10px;
+}
+
+#LoginInterface #donieLogo {
+  width: 300px;
+}
+
+#LoginInterface form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-white-color);
+  margin-top: -5px;
+  padding: 10px 0px 10px 10px ;
+  width: 290px;
+}
+
+#LoginInterface form .inputField {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+
+#LoginInterface form input {
+  font-size: large;
+  border: none
+}
+
+#LoginInterface form .iconInputForm {
+  margin-right: 10px;
+  color: var(--secondary-pink-color);
+}
+
+#LoginInterface form button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: large;
+  color: var(--primary-white-color);
+  background-color: var(--secondary-pink-color);
+  border: 2px solid var(--secondary-pink-color);
+  border-radius: 5px;
+}
+
+#LoginInterface form button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#LoginInterface a {
+  text-decoration: none;
+  color: var(--secondary-pink-color);
+}
+
+#LoginInterface form #donamaidLogo{ 
+  max-width: 90%;
+}
+
+#LoginInterface #buttonExit {
+  display: flex;
+  justify-content: flex-end;
+  font-size: x-large;
+  width: 100%;
+  color: var(--secondary-pink-color);
+  transition: opacity 0.6s;
+}
+
+#LoginInterface #buttonExit:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
