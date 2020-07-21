@@ -18,8 +18,12 @@ const SearchProfessional = () => {
     let inputName = document.getElementById('inputName').value;
 
     if(inputName !== '' && professionals !== []) {
+      let findedProfessional = false; 
+
       for(const professionalData of professionals) {
         if(inputName === professionalData.name) {
+          findedProfessional = true;
+
           history.push({
             pathname: '/profile-page',
             state: {professionalData}
@@ -28,8 +32,12 @@ const SearchProfessional = () => {
           break;
         }
       }
+
+      if(findedProfessional === false) {
+        alert('Verifique o nome do profissional digitado!');
+      }
     }else {
-      alert('Verifique o nome do profissional digitado!')
+      alert('Verifique o nome do profissional digitado!');
     }
   }
 
