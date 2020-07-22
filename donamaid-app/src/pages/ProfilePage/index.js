@@ -14,7 +14,7 @@ const ProfilePage = () => {
     showLoginInterface: false,
     homeworldDetails: {}
   });
-
+  
   const history = useHistory();
 
   useEffect(() => {
@@ -31,6 +31,16 @@ const ProfilePage = () => {
 
     getHomeWorldName();
   }, []); 
+
+  function handleClickHire() {
+    let textButtonHire = document.getElementById('hireProfessional').textContent;
+    
+    if(`QUERO CONTRATAR ${data.professionalData.name.toUpperCase()}` === textButtonHire) {
+      setData({ ...data, showLoginInterface: true })
+    }else {
+      history.push('/');
+    }
+  }
    
   return(
     <div id='profilePageContainer'>
@@ -62,7 +72,7 @@ const ProfilePage = () => {
       <div id='containerButtonHire'>
         <button 
           id='hireProfessional'
-          onClick={() => setData({ ...data, showLoginInterface: true })}
+          onClick={handleClickHire}
         >
           {`QUERO CONTRATAR ${data.professionalData.name.toUpperCase()}`}
         </button>

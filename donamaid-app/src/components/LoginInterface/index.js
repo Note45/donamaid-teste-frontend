@@ -26,7 +26,17 @@ const LoginInterface = ({ data }) => {
 
     const { password, email } = formData;
     
-    alert(email, password);
+    if(password !== '' && email !== '') {
+      data.showLoginInterface = false;
+
+      let ButtonHire = document.getElementById('hireProfessional');
+      ButtonHire.textContent = 'PROFISSIONAL FOI CONTRATADO!';
+
+      history.push({
+        pathname: '/profile-page',
+        state: data 
+      });
+    }
   }
 
   function handleClickExit() {
@@ -67,7 +77,7 @@ const LoginInterface = ({ data }) => {
             <BsLock className='iconInputForm'/>
             
             <input
-              type='text'
+              type='password'
               name='password'
               id='password'
               placeholder='sua senha'
