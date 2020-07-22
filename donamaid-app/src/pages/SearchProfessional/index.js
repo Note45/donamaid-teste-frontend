@@ -46,7 +46,7 @@ const SearchProfessional = () => {
   return (
     <div id='containerSearchProfessional'>
       <header>
-        <img id='logo' src={logo} alt='Logo Donamaid'/>
+        <div className='containerLogoHeader' onPress={() => history.push('/')}><img id='logo' src={logo} alt='Logo Donamaid'/></div>
       </header>
 
       <div id='searchContainer'>

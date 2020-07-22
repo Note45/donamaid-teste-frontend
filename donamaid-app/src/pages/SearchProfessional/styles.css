@@ -9,6 +9,10 @@
   background-color: var(--primary-pink-color);
 }
 
+#profilePageContainer header .containerLogoHeader {
+  cursor: pointer;
+}
+
 #containerSearchProfessional header #logo {
   max-width: 400px;
   max-height: 50px;

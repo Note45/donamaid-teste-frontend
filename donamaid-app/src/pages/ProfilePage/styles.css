@@ -11,6 +11,10 @@
   background-color: var(--primary-pink-color);
 }
 
+#profilePageContainer header .containerLogoHeader {
+  cursor: pointer;
+}
+
 #profilePageContainer header #logo {
   max-width: 400px;
   max-height: 50px;

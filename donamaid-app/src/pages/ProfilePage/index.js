@@ -46,7 +46,7 @@ const ProfilePage = () => {
   return(
     <div id='profilePageContainer'>
       <header>
-        <img id='logo' src={logo} alt='Logo Donamaid'/>
+        <div className='containerLogoHeader' onClick={() => history.push('/')}><img id='logo' src={logo} alt='Logo Donamaid'/></div>
         
         <button id='searchProfessioanlButton' onClick={() => history.push('/')}>
           <FaSearch id='icon' />    
