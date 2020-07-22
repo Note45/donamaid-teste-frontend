@@ -90,10 +90,10 @@ const LoginInterface = ({ data }) => {
             entrar
           </button>
 
-          <a href='https://donamaid.com/' target='_blank'>esqueci minha senha</a>
+          <a href='https://donamaid.com/' target='_blank' rel="noopener noreferrer">esqueci minha senha</a>
         </form>
 
-        <p>Ainda não tem cadastro? Faça <a href='https://donamaid.com/' arget='_blank'>aqui</a></p>
+        <p>Ainda não tem cadastro? Faça <a href='https://donamaid.com/' target='_blank' rel="noopener noreferrer">aqui</a></p>
       </div>
     </div>
   );
