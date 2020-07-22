@@ -10,6 +10,7 @@
   width: 100vw;
   height: 100vh;
   background-color: var(--primary-black-color);
+  text-align: center;
 }
 
 #loginInterfaceContainer #LoginInterface {

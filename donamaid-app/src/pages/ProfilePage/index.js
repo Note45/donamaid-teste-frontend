@@ -11,9 +11,9 @@ import LoginInterface from '../../components/LoginInterface';
 const ProfilePage = () => {
   const [ data, setData ] = useState({
     ...useLocation().state,
+    showLoginInterface: false,
     homeworldDetails: {}
   });
-  const [ showLoginInterface, setShowLoginInterface ] = useState(false); 
 
   const history = useHistory();
 
@@ -38,7 +38,6 @@ const ProfilePage = () => {
         <img id='logo' src={logo} alt='Logo Donamaid'/>
         
         <button id='searchProfessioanlButton' onClick={() => history.push('/')}>
-          <p>PESQUISAR OUTRO PROFISSIONAL</p>
           <FaSearch id='icon' />    
         </button>
       </header>
@@ -63,14 +62,14 @@ const ProfilePage = () => {
       <div id='containerButtonHire'>
         <button 
           id='hireProfessional'
-          onClick={() => setShowLoginInterface(true)}
+          onClick={() => setData({ ...data, showLoginInterface: true })}
         >
           {`QUERO CONTRATAR ${data.professionalData.name.toUpperCase()}`}
         </button>
       </div>
 
-      {showLoginInterface &&
-        <LoginInterface />
+      {data.showLoginInterface &&
+        <LoginInterface data={data} />
       }
     </div>
   );

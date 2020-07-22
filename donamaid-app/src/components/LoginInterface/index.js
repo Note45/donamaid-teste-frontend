@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { BsPeopleCircle, BsLock } from 'react-icons/bs';
 import { IoMdCloseCircleOutline } from 'react-icons/io';
+import { useHistory } from 'react-router-dom';
 
 import './styles.css';
 import donieLogo from '../../assets/donie.svg';
 import donamaidLogo from '../../assets/donamaid-logo.svg';
 
-const LoginInterface = () => {
+const LoginInterface = ({ data }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
+
+  const history = useHistory();
 
   function handleInputChange(event) {
     const { name, value } = event.target
@@ -26,11 +29,20 @@ const LoginInterface = () => {
     alert(email, password);
   }
 
+  function handleClickExit() {
+    data.showLoginInterface = false;
+
+    history.push({
+      pathname: '/profile-page',
+      state: data 
+    });
+  }
+
   return(
     <div id='loginInterfaceContainer'>
       <div id='LoginInterface'>
         <div id='buttonExit'>
-          <IoMdCloseCircleOutline onClick={() => alert('Clicou')}/>
+          <IoMdCloseCircleOutline onClick={handleClickExit}/>
         </div>
 
         <img id='donieLogo' src={donieLogo} alt='Donie Logo' />
@@ -47,6 +59,7 @@ const LoginInterface = () => {
               id='email'
               placeholder='seu e-mail'
               onChange={handleInputChange}
+              required
             />
           </div>
 
@@ -59,6 +72,7 @@ const LoginInterface = () => {
               id='password'
               placeholder='sua senha'
               onChange={handleInputChange}
+              required
             />
           </div>
 
@@ -66,10 +80,10 @@ const LoginInterface = () => {
             entrar
           </button>
 
-          <a href='#'>esqueci minha senha</a>
+          <a href='https://donamaid.com/' target='_blank'>esqueci minha senha</a>
         </form>
 
-        <p>Ainda não tem cadastro? Faça <a href='#'>aqui</a></p>
+        <p>Ainda não tem cadastro? Faça <a href='https://donamaid.com/' arget='_blank'>aqui</a></p>
       </div>
     </div>
   );
