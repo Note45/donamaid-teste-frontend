@@ -27,7 +27,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 900) {
+@media screen and (max-width: 900px) {
   #professionalsListContainer {
     padding: 10px;
     background-color: var(--secondary-white-color);
