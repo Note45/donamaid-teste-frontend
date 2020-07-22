@@ -1,0 +1,28 @@
+#professionalsListContainer {
+  margin-top: auto;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: var(--secondary-white-color);
+  border: 2px solid var(--secondary-white-color);
+  border-radius: 10px;
+}
+
+#professionalsListContainer .icon {
+  color: var(--primary-pink-color);
+  margin-right: 10px;
+}
+
+#professionalsListContainer h2 {
+  font-weight: 400;
+}
+
+#professionalsListContainer h3 {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+}
+
+#professionalsListContainer .containerProfessional {
+  cursor: pointer;
+  width: 100%;
+}

@@ -1,16 +1,37 @@
 import React from 'react';
+import { BsPeopleCircle } from 'react-icons/bs';
+import { useHistory } from 'react-router-dom';
+import { randomProfessionalListCreate } from '../../services/api';
 
 import './styles.css';
 
-const ProfessionalsList = () => {
-  return (
-    <div id='profesionalsListContainer'>
-      <h1>Outros Profissionais</h1>
+const ProfessionalsList = ({ dataProfessionals = []}) => {
+  const history = useHistory();
 
-      <h2>Antonio Lisbôa</h2>
-      <h2>Antonio Lisbôa</h2>
-      <h2>Antonio Lisbôa</h2>
-      <h2>Antonio Lisbôa</h2>
+  return (
+    <div id='professionalsListContainer'>
+      <h2>Outros Profissionais:</h2>
+      
+      {dataProfessionals.map(professional => (
+        <div
+          key={professional.name} 
+          className='containerProfessional'
+          onClick={() => {
+            let professionalData = professional;
+            let professionalsList = randomProfessionalListCreate();
+
+            console.log(professionalData, professionalsList);
+            history.push({
+              pathname: '/profile-page',
+              state: {professionalData, professionalsList}
+            });
+
+            document.location.reload();
+          }}
+        >
+          <h3><BsPeopleCircle className='icon'/>{professional.name}</h3>          
+        </div>
+      ))}
     </div>
   );
 }

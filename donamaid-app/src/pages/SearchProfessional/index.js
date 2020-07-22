@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import './styles.css';
 import logo from '../../assets/donamaid-branco-logo.png';
-import peopleNames from '../../services/api';
+import peopleNames, { randomProfessionalListCreate } from '../../services/api';
 
 const SearchProfessional = () => {
   const [ professionals, setProfessionals ] = useState([]);
@@ -23,10 +23,12 @@ const SearchProfessional = () => {
       for(const professionalData of professionals) {
         if(inputName === professionalData.name) {
           findedProfessional = true;
+          
+          let professionalsList = await randomProfessionalListCreate();
 
           history.push({
             pathname: '/profile-page',
-            state: {professionalData}
+            state: {professionalData, professionalsList}
           });
 
           break;

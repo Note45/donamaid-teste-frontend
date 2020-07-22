@@ -4,9 +4,10 @@ import axios from 'axios';
 import { FaSearch } from 'react-icons/fa';
 
 import './styles.css';
+import LoginInterface from '../../components/LoginInterface';
+import ProfessionalsList from '../../components/ProfessionalsList';
 import logo from '../../assets/donamaid-branco-logo.png';
 import profileAvatar from '../../assets/profile-avatar.png';
-import LoginInterface from '../../components/LoginInterface';
 
 const ProfilePage = () => {
   const [ data, setData ] = useState({
@@ -41,7 +42,7 @@ const ProfilePage = () => {
       history.push('/');
     }
   }
-   
+
   return(
     <div id='profilePageContainer'>
       <header>
@@ -67,6 +68,8 @@ const ProfilePage = () => {
             <h2>{`Ultimo Serviço: ${data.professionalData.edited.split('-')[1]}/${data.professionalData.edited.split('-')[0]}`}</h2>
           </div>
         </div>
+
+        <ProfessionalsList dataProfessionals={data.professionalsList}/>
       </div>
       
       <div id='containerButtonHire'>
