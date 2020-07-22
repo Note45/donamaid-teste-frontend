@@ -1,7 +1,6 @@
 #profilePageContainer {
   width: 100vw;
   height: 95vh;
-  background:  linear-gradient( 190grad, var(--primary-pink-color) 50%, var(--primary-white-color) 50%);
 }
 
 #profilePageContainer header {
@@ -44,27 +43,30 @@
 
 #professionalProfile {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 80vh;
+  height: auto;
 }
 
 #professionalProfile #avatar {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 150px;
+  max-height: 150px;
+  border: 2px solid var(--primary-pink-color);
   border-radius: 50%;
-  margin: 20px 50px 20px 50px;
+  margin: 30px;
 }
 
 #professionalProfile #professionalName{
-  color: var(--primary-white-color);
-  margin-bottom: 50%;
+  margin: 0px 0px 20px 0px
 }
 
 #professionalProfile h1 {
   margin-bottom: 0px;
+}
+
+#professionalName legend {
+  color: var(--primary-gray-color);
 }
 
 #containerButtonHire{
@@ -76,11 +78,12 @@
 }
 
 #containerButtonHire button {
-  font-size: x-large;
+  font-size: large;
   color: var(--primary-white-color);
   background-color: var(--secondary-pink-color);
   border: 2px solid var(--secondary-pink-color);
   border-radius: 15px;
+  margin: 20px 0px 20px 0px;
   padding: 5px;
   transition: opacity 0.8s;
 }
@@ -90,7 +93,55 @@
   cursor: pointer;
 }
 
+#descriptionContainer {
+  margin: 40px 0px 40px 0px;
+}
+
 #descriptionContainer h2 {
   margin: 5px;
   font-weight: 300;
+}
+
+@media screen and (min-width: 900px) {
+  #profilePageContainer {
+    background:  linear-gradient( 190grad, var(--primary-pink-color) 50%, var(--primary-white-color) 50%);
+  }
+
+  #professionalProfile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+  }
+  
+  #professionalProfile #avatar {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 50%;
+    margin: 20px 50px 20px 50px;
+  }
+  
+  #professionalProfile #professionalName{
+    color: var(--primary-white-color);
+    margin-bottom: 50%;
+  }
+  
+  #professionalProfile h1 {
+    margin-bottom: 0px;
+  }
+  
+  #containerButtonHire{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+
+  #containerButtonHire button {
+    font-size: x-large;
+    margin: 0;
+  }
 }

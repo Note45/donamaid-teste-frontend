@@ -26,3 +26,12 @@
   cursor: pointer;
   width: 100%;
 }
+
+@media screen and (max-width: 900) {
+  #professionalsListContainer {
+    padding: 10px;
+    background-color: var(--secondary-white-color);
+    border: 2px solid var(--secondary-white-color);
+    border-radius: 10px;
+  }  
+}
