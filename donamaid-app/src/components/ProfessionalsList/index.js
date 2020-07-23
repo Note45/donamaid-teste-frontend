@@ -20,13 +20,10 @@ const ProfessionalsList = ({ dataProfessionals = []}) => {
             let professionalData = professional;
             let professionalsList = randomProfessionalListCreate();
 
-            console.log(professionalData, professionalsList);
             history.push({
-              pathname: '/profile-page',
+              pathname: '/reload',
               state: {professionalData, professionalsList}
             });
-
-            document.location.reload();
           }}
         >
           <h3><BsPeopleCircle className='icon'/>{professional.name}</h3>          
